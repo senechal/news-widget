@@ -1,11 +1,11 @@
 import React from 'react';
-import NewsList from './NewsList';
+import NewsItem from '../NewsItem';
 
 const NewsWidget = () => (
   <div>
     News Widget Component
-    <NewsList />
+    <NewsItem />
   </div>
-)
+);
 
 export default NewsWidget;
