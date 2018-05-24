@@ -33,6 +33,10 @@ exports[`Test for NewsWidget should render correctly 1`] = `
     className="news-list"
   >
     <NewsItem />
+    <NewsItem />
+    <NewsItem />
+    <NewsItem />
+    <NewsItem />
   </div>
   <div>
     <button

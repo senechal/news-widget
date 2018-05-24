@@ -17,6 +17,10 @@ const NewsWidget = () =>
       </div>
       <div className="news-list">
         <NewsItem />
+        <NewsItem />
+        <NewsItem />
+        <NewsItem />
+        <NewsItem />
       </div>
       <div>
         <button className="show-more-button">Show More</button>
