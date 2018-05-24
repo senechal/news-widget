@@ -15,28 +15,88 @@ exports[`Test for NewsWidget should render correctly 1`] = `
     <select
       className="source-selector"
     >
-      <option>
+      <option
+        value={null}
+      >
         Filter By Source
       </option>
-      <option>
-        mock
+      <option
+        key="fortune"
+        value="fortune"
+      >
+        Fortune
       </option>
-      <option>
-        mock
+      <option
+        key="reuters"
+        value="reuters"
+      >
+        Reuters
       </option>
-      <option>
-        mock
+      <option
+        key="wall-street"
+        value="wall-street"
+      >
+        The Wall Street Journal
+      </option>
+      <option
+        key="cnn"
+        value="cnn"
+      >
+        CNN
       </option>
     </select>
   </div>
   <div
     className="news-list"
   >
-    <NewsItem />
-    <NewsItem />
-    <NewsItem />
-    <NewsItem />
-    <NewsItem />
+    <NewsItem
+      date="2018-05-23T22:29:51Z"
+      key="Critics Ask Amazon to Stop Selling Facial Recognition Technology to Police"
+      source={
+        Object {
+          "id": "fortune",
+          "name": "Fortune",
+        }
+      }
+      title="Critics Ask Amazon to Stop Selling Facial Recognition Technology to Police"
+      url="http://fortune.com/2018/05/23/critics-ask-amazon-to-stop-selling-facial-recognition-technology-to-police/"
+    />
+    <NewsItem
+      date="2018-05-23T22:23:25Z"
+      key="Ackman makes roughly $1 billion bet on Lowe's"
+      source={
+        Object {
+          "id": "reuters",
+          "name": "Reuters",
+        }
+      }
+      title="Ackman makes roughly $1 billion bet on Lowe's"
+      url="https://www.reuters.com/article/us-lowes-results/ackman-makes-roughly-1-billion-bet-on-lowes-idUSKCN1IO1BB"
+    />
+    <NewsItem
+      date="2018-05-23T22:20:00Z"
+      key="The Art of a Banking Deal"
+      source={
+        Object {
+          "id": "the-wall-street-journal",
+          "name": "The Wall Street Journal",
+        }
+      }
+      title="The Art of a Banking Deal"
+      url="https://www.wsj.com/articles/the-art-of-a-banking-deal-1527114002"
+    />
+    <NewsItem
+      date="2018-05-23T22:10:04Z"
+      key="Elon Musk wants to rate journalists. He'd call his site 'Pravda'"
+      source={
+        Object {
+          "id": "cnn",
+          "name": "CNN",
+        }
+      }
+      title="Elon Musk wants to rate journalists. He'd call his site 'Pravda'"
+      url="http://money.cnn.com/2018/05/23/technology/elon-musk-media/index.html"
+    />
   </div>
   <div>
     <button

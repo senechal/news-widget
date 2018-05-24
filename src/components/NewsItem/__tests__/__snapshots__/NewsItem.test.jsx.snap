@@ -6,19 +6,19 @@ exports[`Test for NewsItemt should render correctly 1`] = `
 >
   <a
     className="news-item-title"
-    href="#"
+    href="http://google.com.br"
   >
-    The Trump Russia investigation is closing in
+    mock title
   </a>
   <div
     className="news-item-date"
   >
-    28/09/2017
+    23/05/2018
   </div>
   <div
     className="news-item-source"
   >
-    Independent
+    Mock
   </div>
 </div>
 `;
