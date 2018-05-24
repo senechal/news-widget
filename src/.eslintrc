@@ -13,6 +13,7 @@
     "import/no-extraneous-dependencies": "off",
     "import/prefer-default-export": "off",
     "import/extensions": "off",
+    "react/jsx-filename-extension": "off",
     "max-len": [
       "error",
       {
