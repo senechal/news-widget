@@ -53,44 +53,42 @@ const articles = [
   },
 ];
 
-const sources = [
-  { name: 'Fortune', id: 'fortune' },
-  { name: 'Reuters', id: 'reuters' },
-  { name: 'The Wall Street Journal', id: 'wall-street' },
-  { name: 'CNN', id: 'cnn' },
-];
-
-const NewsWidget = () => {
-  const mappedArticles = articles.map(article => (
-    <NewsItem
-      key={article.title}
-      title={article.title}
-      url={article.url}
-      date={article.publishedAt}
-      source={article.source}
-    />
-  ));
-  const mappedSources = sources.map(source => (
-    <option key={source.id} value={source.id}>{source.name}</option>
-  ));
-  return (
-    <div className="news-widget-list">
-      <div className="news-header">
-        <h3 className="news-title">News</h3>
-        <select className="source-selector">
-          <option value={null}>Filter By Source</option>
-          {mappedSources}
-        </select>
+class NewsWidget extends React.Component {
+  componentDidMount() {
+    this.props.fetchSources();
+    this.props.fetchNews(this.props.page);
+  }
+  render() {
+    const mappedArticles = this.props.articles.map(article => (
+      <NewsItem
+        key={article.title}
+        title={article.title}
+        url={article.url}
+        date={article.publishedAt}
+        source={article.source}
+      />
+    ));
+    const mappedSources = this.props.sources.map(source => (
+      <option key={source.id} value={source.id}>{source.name}</option>
+    ));
+    return (
+      <div className="news-widget-list">
+        <div className="news-header">
+          <h3 className="news-title">News</h3>
+          <select onChange={(event) => { this.props.filterBySource(event.target.value); }} className="source-selector">
+            <option value={null}>Filter By Source</option>
+            {mappedSources}
+          </select>
+        </div>
+        <div className="news-list">
+          {mappedArticles}
+        </div>
+        <div>
+          <button className="show-more-button" onClick={() => this.props.fetchMore(this.props.page)}>Show More</button>
+        </div>
       </div>
-      <div className="news-list">
-        {mappedArticles}
-      </div>
-      <div>
-        <button className="show-more-button">Show More</button>
-      </div>
-    </div>
-  );
-};
-
+    );
+  }
+}
 
 export default NewsWidget;
